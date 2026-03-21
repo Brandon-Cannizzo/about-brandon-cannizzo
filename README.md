@@ -1,19 +1,5 @@
-# 🎈 Blank app template
+# About Me (Brandon Cannizzo)
 
-A simple Streamlit app template for you to modify!
+This app will act as a sort of portfolio with my resume, skills, experience, and certificates(soon to come)
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
-
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+*Currently this is in progress and not complete*
