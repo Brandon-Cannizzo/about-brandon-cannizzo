@@ -1,6 +1,10 @@
 import streamlit as st
 
-st.title("🎈 My new app")
+st.title("Brandon Cannizzo")
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "I will use this page to advertise my skills and experience \n\n :no_pedestrians: Coming Soon :no_pedestrians:"
 )
+
+
+with st.sidebar:
+    st.write("Test")
