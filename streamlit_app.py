@@ -11,9 +11,9 @@ st.write(
 
 ico_width = 80
 with st.container():
-    col_1, col_2 = st.columns([0.7,0.3])
+    col_1, col_2 = st.columns([0.6,0.4])
     with col_1:
-        st.image('src/images/LinkedIn_pfp.jpg', width=500)
+        st.image('src/images/LinkedIn_pfp.jpg', width=400)
     
     with col_2:
         st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
@@ -25,7 +25,7 @@ with st.sidebar:
     st.title("Sections")
     st.markdown("[About Me](#about-me)")
     st.markdown("[Resume](#resume)")
-    st.markdown("[Section 3](#section-3)")
+    st.markdown("[Education](#education)")
 
 st.divider()
 st.header("About Me")
@@ -40,25 +40,68 @@ with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
 
 # Work Experience Section
 st.title("Experience")
-with st.expander("Harmony Biosciences - IT Service Desk"):
-    st.write('''
-             November 2025 - Present \n\n
-             Write detailed explanation of responsibilities and software/hardware experience.
-             ''')
-    
-with st.expander("AuresTech - Engineer"):
-    st.write('''
-             June 2024 - September 2025 \n\n
-             Write detailed explanation of responsibilities and software/hardware experience.
-             ''')
-    
-with st.expander("New Jersey Institute of Technology - Research Assistant"):
-    st.write('''
-             May 2023 - May 2024 \n\n
-             Write detailed explanation of responsibilities and software/hardware experience.
-             ''')
-    with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-        st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+
+choice = st.selectbox("Choose formatting option for realtime comparison", 
+                      ("Expanders", "Columns", "Tabs"))
+
+if choice=="Expanders":
+    with st.expander("Harmony Biosciences - IT Service Desk"):
+        st.write('''
+                November 2025 - Present \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+        
+    with st.expander("AuresTech - Engineer"):
+        st.write('''
+                June 2024 - September 2025 \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+        
+    with st.expander("New Jersey Institute of Technology - Research Assistant"):
+        st.write('''
+                May 2023 - May 2024 \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
+            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+
+if choice=="Columns":
+    col_3, col_4, col_5 = st.columns(3)
+    with col_3:
+        st.header("Harmony Biosciences - IT Service Desk")
+        st.write('''
+                November 2025 - Present \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+        
+    with col_4:
+        st.header("AuresTech - Engineer")
+        st.write('''
+                June 2024 - September 2025 \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+    with col_5:
+        st.header("New Jersey Institute of Technology - Research Assistant")
+        st.write('''
+                May 2023 - May 2024 \n\n
+                Write detailed explanation of responsibilities and software/hardware experience.
+                ''')
+        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
+            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+
+
+if choice=="Tabs":
+    tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
+    with tab_1:
+        st.write("Title: IT Service Desk \n\n Experience")
+    with tab_2:
+        st.write("Title: Engineer \n\n Experience")
+    with tab_3:
+        st.write("Title: Research Assistant \n\n Experience")
+        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
+            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+
+
 
 st.title("Education")
 with st.expander("New Jersey Institute of Technology"):
