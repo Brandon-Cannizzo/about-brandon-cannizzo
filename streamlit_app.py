@@ -9,16 +9,22 @@ st.write(
     "I will use this page to advertise my skills and experience \n\n :no_pedestrians: Coming Soon :no_pedestrians:"
 )
 
+st.image('src/images/LinkedIn_pfp.jpg', width=400, caption="Check out my profiles below!")
+
 ico_width = 80
 with st.container():
-    col_1, col_2 = st.columns([0.6,0.4])
+    col_1, col_2, col_3 = st.columns(3, width = 200)
     with col_1:
-        st.image('src/images/LinkedIn_pfp.jpg', width=400)
+        st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
     
     with col_2:
-        st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
+        
         st.image('src/images/github_logo.png', width=ico_width, link="https://github.com/Brandon-Cannizzo")
+        
+    with col_3:
         st.image('src/images/tryhackme_logo.jpg', width=ico_width, link="https://tryhackme.com/p/Brandoon")
+
+
 
 # Sidebar with sections links for easy navigation
 with st.sidebar:
@@ -26,21 +32,23 @@ with st.sidebar:
     st.markdown("[About Me](#about-me)")
     st.markdown("[Resume](#resume)")
     st.markdown("[Education](#education)")
+    st.markdown("[Skills](#skills)")
 
 st.divider()
-st.header("About Me")
-st.write("...")
+st.header("ℹ️ About Me")
+st.write("")
 
 st.divider()
-st.header("Resume")
+st.header("📄 Resume")
 
 # Resume Download Button
 with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
     st.download_button(label="Download a PDF of my Resume!", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
 
 # Work Experience Section
-st.title("Experience")
+st.title("🏢 Experience")
 
+# Offer different views for Experience for testing purposes
 choice = st.selectbox("Choose formatting option for realtime comparison", 
                       ("Expanders", "Columns", "Tabs"))
 
@@ -103,7 +111,7 @@ if choice=="Tabs":
 
 
 
-st.title("Education")
+st.title("🏫 Education")
 with st.expander("New Jersey Institute of Technology"):
     st.write('''
              May 2023 - BS In Computer Engineering \n\n
@@ -111,7 +119,7 @@ with st.expander("New Jersey Institute of Technology"):
              ''')
 
 st.divider()
-st.header("Section 3")
+st.header("✅ Skills")
 st.write("...")
 
 
