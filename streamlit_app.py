@@ -35,18 +35,18 @@ with st.sidebar:
     st.markdown("[Skills](#skills)")
 
 st.divider()
-st.header("ℹ️ About Me")
+st.header(":material/Info: About Me")
 st.write("")
 
 st.divider()
-st.header("📄 Resume")
+st.header(":material/docs: Resume")
 
 # Resume Download Button
 with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
-    st.download_button(label="Download a PDF of my Resume!", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
+    st.download_button(label=":material/Download: Download a PDF of my Resume!", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
 
 # Work Experience Section
-st.title("🏢 Experience")
+st.title(":material/Work: Experience")
 
 # Offer different views for Experience for testing purposes
 choice = st.selectbox("Choose formatting option for realtime comparison", 
@@ -111,15 +111,19 @@ if choice=="Tabs":
 
 
 
-st.title("🏫 Education")
-with st.expander("New Jersey Institute of Technology"):
-    st.write('''
-             May 2023 - BS In Computer Engineering \n\n
-             May 2024 - MS In Computer Engineering
-             ''')
+st.title(":material/School: Education")
+col_6, col_7 = st.columns(2)
+with col_6:
+    st.image('src/images/NJIT_simple.png', width="content", link="https://www.njit.edu/")
+
+with col_7:
+    st.write("New Jersey Institute of Technology")
+
+st.write(''' May 2023 - BS In Computer Engineering \n\n May 2024 - MS In Computer Engineering
+         ''')
 
 st.divider()
-st.header("✅ Skills")
+st.header(":material/Build_Circle: Skills")
 st.write("...")
 
 
