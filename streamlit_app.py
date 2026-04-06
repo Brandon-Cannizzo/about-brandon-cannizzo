@@ -31,22 +31,26 @@ with st.sidebar:
     st.title("Sections")
     st.markdown("[About Me](#about-me)")
     st.markdown("[Resume](#resume)")
+    st.markdown("[Experience](#experience)")
     st.markdown("[Education](#education)")
     st.markdown("[Skills](#skills)")
+    st.markdown("[Certifications](#certifications)")
 
 st.divider()
-st.header(":material/Info: About Me")
+st.header(":material/Info: About Me", anchor="about-me")
 st.write("")
 
 st.divider()
-st.header(":material/docs: Resume")
+st.header(":material/docs: Resume", anchor="resume")
 
 # Resume Download Button
 with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
     st.download_button(label=":material/Download: Download a PDF of my Resume!", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
 
+st.divider()
+
 # Work Experience Section
-st.title(":material/Work: Experience")
+st.title(":material/Work: Experience", anchor="experience")
 
 # Offer different views for Experience for testing purposes
 choice = st.selectbox("Choose formatting option for realtime comparison", 
@@ -109,9 +113,9 @@ if choice=="Tabs":
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
+st.divider()
 
-
-st.title(":material/School: Education")
+st.title(":material/School: Education", anchor="education")
 col_6, col_7 = st.columns(2)
 with col_6:
     st.image('src/images/NJIT_simple.png', width="content", link="https://www.njit.edu/")
@@ -123,12 +127,18 @@ st.write(''' May 2023 - BS In Computer Engineering \n\n May 2024 - MS In Compute
          ''')
 
 st.divider()
-st.header(":material/Build_Circle: Skills")
-st.write("...")
-
+st.header(":material/Build_Circle: Skills", anchor="skills")
+# Can break this up like Programming Languages, Hardware, IT/Security
+st.write("Python, C++, MATLAB, Java")
+st.write("Help Desk iPad/PC Repair, Radio Equipment, Spectrum Analysis")
+st.write("Active Directory, Intune, Sophos, On-Site & Remote Assistance")
 
 st.divider()
 
+st.header(":material/Verified: Certifications", anchor="certifications")
+st.write(":material/Exclamation: Working on it :material/Exclamation:")
+
+st.divider()
 # Get latest commit date
 
 # Get the latest commit object from the current active branch
