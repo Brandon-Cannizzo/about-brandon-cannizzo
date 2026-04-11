@@ -9,7 +9,7 @@ st.write(
     "I will use this page to advertise my skills and experience \n\n :no_pedestrians: Coming Soon :no_pedestrians:"
 )
 
-st.image('src/images/LinkedIn_pfp.jpg', width=400, caption="Check out my profiles below!")
+st.image('src/images/LinkedIn_pfp_cropped.jpg', width=400, caption="Check out my profiles below!")
 
 ico_width = 80
 with st.container():
@@ -38,7 +38,13 @@ with st.sidebar:
 
 st.divider()
 st.header(":material/Info: About Me", anchor="about-me")
-st.write("")
+st.write('''
+        NJIT alumnus with an M.S. in Computer Engineering, searching 
+        for a rewarding opportunity where I can to put my knowledge and 
+        skills to use in an impactful and rewarding way. An experienced Radar, 
+        AI, and machine learning researcher; with a focus in wireless communications 
+        and computer networking. Able to collaborate or complete tasks independently.
+        ''')
 
 st.divider()
 st.header(":material/docs: Resume", anchor="resume")
@@ -56,24 +62,48 @@ st.title(":material/Work: Experience", anchor="experience")
 choice = st.selectbox("Choose formatting option for realtime comparison", 
                       ("Expanders", "Columns", "Tabs"))
 
+Harmony_Text = """
+            ● Enrolled and removed devices from the environment utilizing Windows Autopilot
+
+            ● Daily monitoring device and user info in Active Directory, Intune, N-Sight RMM, and Sophos
+
+            ● Device experience includes Windows Surface Laptops and Apple iPads & iPhones
+
+            ● Provided IT support in office (printers, conference rooms, user requests) and for remote users
+            """
+
+Aures_Text = """
+            ● Worked with chief scientist on the investigation of 5G and future networking for drone-based applications
+            
+            ● Led the research and design of AuresTech open source 5G Network using OAI 5G Core Network
+            
+            ● Migrated AuresTech Network to hardware
+            
+            ● Perform testing of over the air AuresTech proprietary system and collected data for evaluation
+            """
+
+NJIT_text = """
+            ● Lab work – Extensive use of Lab View and MATLAB, alongside hardware simulating Radar
+           
+            ● Research primarily focused on Radar and Machine learning
+            
+            ● Generate figures and supply comments for monthly reports
+            """
+
+
 if choice=="Expanders":
     with st.expander("Harmony Biosciences - IT Service Desk"):
-        st.write('''
-                November 2025 - Present \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("November 2025 - Present \n\n")
+        st.write(Harmony_Text)
         
     with st.expander("AuresTech - Engineer"):
-        st.write('''
-                June 2024 - September 2025 \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("June 2024 - September 2025 \n\n")
+        st.write(Aures_Text)
         
     with st.expander("New Jersey Institute of Technology - Research Assistant"):
-        st.write('''
-                May 2023 - May 2024 \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("May 2023 - May 2024 \n\n")
+        st.write(NJIT_text)
+
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
@@ -81,23 +111,18 @@ if choice=="Columns":
     col_3, col_4, col_5 = st.columns(3)
     with col_3:
         st.header("Harmony Biosciences - IT Service Desk")
-        st.write('''
-                November 2025 - Present \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("November 2025 - Present")
+        st.write(Harmony_Text)
         
     with col_4:
         st.header("AuresTech - Engineer")
-        st.write('''
-                June 2024 - September 2025 \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("June 2024 - September 2025 \n\n")
+        st.write(Aures_Text)
+
     with col_5:
         st.header("New Jersey Institute of Technology - Research Assistant")
-        st.write('''
-                May 2023 - May 2024 \n\n
-                Write detailed explanation of responsibilities and software/hardware experience.
-                ''')
+        st.write("May 2023 - May 2024 \n\n")
+        st.write(NJIT_text)
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
@@ -106,10 +131,13 @@ if choice=="Tabs":
     tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
     with tab_1:
         st.write("Title: IT Service Desk \n\n Experience")
+        st.write(Harmony_Text)
     with tab_2:
         st.write("Title: Engineer \n\n Experience")
+        st.write(Aures_Text)
     with tab_3:
         st.write("Title: Research Assistant \n\n Experience")
+        st.write(NJIT_text)
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
