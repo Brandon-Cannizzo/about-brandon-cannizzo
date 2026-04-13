@@ -163,7 +163,7 @@ st.divider()
 st.header(":mailbox: Contact Me!")
 
 html_form = """
-<form action="https://formsubmit.co/brandoncaniz4@gmail.com" method="POST">
+<form action="https://formsubmit.co/89c50d2258f5ec9fe7830f361aa775ef" method="POST">
      <input type="hidden" name="_captcha" value="false">
      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; margin-bottom: 10px;">
      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; margin-bottom: 10px;">
