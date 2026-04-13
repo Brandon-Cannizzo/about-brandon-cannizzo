@@ -82,12 +82,12 @@ Aures_Text = """
             ● Perform testing of over the air AuresTech proprietary system and collected data for evaluation
             """
 
-NJIT_text = """
+NJIT_text = """ 
             ● Lab work – Extensive use of Lab View and MATLAB, alongside hardware simulating Radar
            
             ● Research primarily focused on Radar and Machine learning
             
-            ● Generate figures and supply comments for monthly reports
+            ● Generate figures and supply comments for monthly reports \n\n
             """
 
 
@@ -101,7 +101,7 @@ if choice=="Expanders":
         st.write(Aures_Text)
         
     with st.expander("New Jersey Institute of Technology - Research Assistant"):
-        st.write("May 2023 - May 2024 \n\n")
+        st.write("May 2023 - May 2024")
         st.write(NJIT_text)
 
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
@@ -137,25 +137,27 @@ if choice=="Tabs":
         st.write(Aures_Text)
     with tab_3:
         st.write("Title: Research Assistant \n\n Experience")
-        st.write(NJIT_text)
+        st.write(NJIT_text, "Assisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+            st.download_button(label="Machine Learning Doppler-Tolerant Download", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
+
 
 st.divider()
 
 st.title(":material/School: Education", anchor="education")
 col_6, col_7 = st.columns(2)
-with col_6:
+with col_7:
     st.image('src/images/NJIT_simple.png', width="content", link="https://www.njit.edu/")
 
-with col_7:
+with col_6:
     st.write("New Jersey Institute of Technology")
-
-st.write(''' May 2023 - BS In Computer Engineering \n\n May 2024 - MS In Computer Engineering
+    st.write(''' May 2023 - BS In Computer Engineering \n\n May 2024 - MS In Computer Engineering
          ''')
+
 
 st.divider()
 st.header(":material/Build_Circle: Skills", anchor="skills")
+
 # Can break this up like Programming Languages, Hardware, IT/Security
 st.write("Python, C++, MATLAB, Java")
 st.write("Help Desk iPad/PC Repair, Radio Equipment, Spectrum Analysis")
