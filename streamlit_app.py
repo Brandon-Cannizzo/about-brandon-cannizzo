@@ -160,34 +160,19 @@ st.divider()
 # Get latest commit date
 
 # Contact Form
-FORMSUBMIT_URL = "https://formsubmit.co/brandoncaniz4@gmail.com"
-st.title("Contact Me!")
+st.header(":mailbox: Contact Me!")
 
-with st.form("contact_form"):
-    name = st.text_input("Name")
-    email = st.text_input("Email Address")
-    message = st.text_area("Message")
-    submit_button = st.form_submit_button("Send")
+html_form = """
+<form action="https://formsubmit.co/brandoncaniz4@gmail.com" method="POST">
+     <input type="hidden" name="_captcha" value="false">
+     <input type="text" name="name" placeholder="Your Name" required style="width: 100%; margin-bottom: 10px;">
+     <input type="email" name="email" placeholder="Your Email" required style="width: 100%; margin-bottom: 10px;">
+     <textarea name="message" placeholder="Your Message" required style="width: 100%; margin-bottom: 10px;"></textarea>
+     <button type="submit" style="background-color: #ff4b4b; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Send</button>
+</form>
+"""
 
-# Handle submissions
-if submit_button:
-    if name and email and message:
-        # Prepare the data
-        payload = {
-            "name": name,
-            "email": email,
-            "message": message
-        }
-        
-        # Post to FormSubmit
-        response = requests.post(FORMSUBMIT_URL, data=payload)
-        
-        if response.status_code == 200:
-            st.success("Message sent successfully! 🎉")
-        else:
-            st.error("There was an error sending your message.")
-    else:
-        st.warning("Please fill out all fields.")
+st.markdown(html_form, unsafe_allow_html=True)
 
 st.divider()
 
