@@ -3,6 +3,7 @@ import datetime
 import git
 from datetime import timezone
 from zoneinfo import ZoneInfo
+import requests
 
 st.title("Brandon Cannizzo")
 st.write(
@@ -38,6 +39,7 @@ with st.sidebar:
 
 st.divider()
 st.header(":material/Info: About Me", anchor="about-me")
+
 st.write('''
         NJIT alumnus with an M.S. in Computer Engineering, searching 
         for a rewarding opportunity where I can to put my knowledge and 
@@ -60,49 +62,38 @@ st.title(":material/Work: Experience", anchor="experience")
 
 # Offer different views for Experience for testing purposes
 choice = st.selectbox("Choose formatting option for realtime comparison", 
-                      ("Expanders", "Columns", "Tabs"))
+                      ("Expanders", "Columns", "Tabs", "Timeline"))
 
 Harmony_Text = """
-            ● Enrolled and removed devices from the environment utilizing Windows Autopilot
-
-            ● Daily monitoring device and user info in Active Directory, Intune, N-Sight RMM, and Sophos
-
-            ● Device experience includes Windows Surface Laptops and Apple iPads & iPhones
-
-            ● Provided IT support in office (printers, conference rooms, user requests) and for remote users
+● Enrolled and removed devices from the environment utilizing Windows Autopilot
+● Daily monitoring device and user info in Active Directory, Intune, N-Sight RMM, and Sophos
+● Device experience includes Windows Surface Laptops and Apple iPads & iPhones
+● Provided IT support in office (printers, conference rooms, user requests) and for remote users
             """
 
 Aures_Text = """
-            ● Worked with chief scientist on the investigation of 5G and future networking for drone-based applications
-            
-            ● Led the research and design of AuresTech open source 5G Network using OAI 5G Core Network
-            
-            ● Migrated AuresTech Network to hardware
-            
-            ● Perform testing of over the air AuresTech proprietary system and collected data for evaluation
+● Worked with chief scientist on the investigation of 5G and future networking for drone-based applications
+● Led the research and design of AuresTech open source 5G Network using OAI 5G Core Network
+● Migrated AuresTech Network to hardware
+● Perform testing of over the air AuresTech proprietary system and collected data for evaluation
             """
 
-NJIT_text = """ 
-            ● Lab work – Extensive use of Lab View and MATLAB, alongside hardware simulating Radar
-           
-            ● Research primarily focused on Radar and Machine learning
-            
-            ● Generate figures and supply comments for monthly reports \n\n
+NJIT_Text = """ 
+● Lab work – Extensive use of Lab View and MATLAB, alongside hardware simulating Radar
+● Research primarily focused on Radar and Machine learning
+● Generate figures and supply comments for monthly reports
             """
 
 
 if choice=="Expanders":
     with st.expander("Harmony Biosciences - IT Service Desk"):
-        st.write("November 2025 - Present \n\n")
-        st.write(Harmony_Text)
+        st.text(f"November 2025 - Present\n{Harmony_Text}")
         
     with st.expander("AuresTech - Engineer"):
-        st.write("June 2024 - September 2025 \n\n")
-        st.write(Aures_Text)
+        st.text(f"June 2024 - September 2025\n{Aures_Text}")
         
     with st.expander("New Jersey Institute of Technology - Research Assistant"):
-        st.write("May 2023 - May 2024")
-        st.write(NJIT_text)
+        st.text(f"May 2023 - May 2024\n{NJIT_Text}")
 
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
@@ -111,18 +102,15 @@ if choice=="Columns":
     col_3, col_4, col_5 = st.columns(3)
     with col_3:
         st.header("Harmony Biosciences - IT Service Desk")
-        st.write("November 2025 - Present")
-        st.write(Harmony_Text)
-        
+        st.text(f"November 2025 - Present\n{Harmony_Text}")
+
     with col_4:
         st.header("AuresTech - Engineer")
-        st.write("June 2024 - September 2025 \n\n")
-        st.write(Aures_Text)
+        st.text(f"June 2024 - September 2025\n{Aures_Text}")
 
     with col_5:
         st.header("New Jersey Institute of Technology - Research Assistant")
-        st.write("May 2023 - May 2024 \n\n")
-        st.write(NJIT_text)
+        st.text(f"May 2023 - May 2024\n{NJIT_Text}")
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
@@ -130,17 +118,17 @@ if choice=="Columns":
 if choice=="Tabs":
     tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
     with tab_1:
-        st.write("Title: IT Service Desk \n\n Experience")
-        st.write(Harmony_Text)
+        st.text(f"Title: IT Service Desk\nExperience\n{Harmony_Text}")
     with tab_2:
-        st.write("Title: Engineer \n\n Experience")
-        st.write(Aures_Text)
+        st.text(f"Title: Engineer\nExperience\n{Aures_Text}")
     with tab_3:
-        st.write("Title: Research Assistant \n\n Experience")
-        st.write(NJIT_text, "Assisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
+        st.text(f"Title: Research Assistant\nExperience\n{NJIT_Text}\nAssisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
         with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
             st.download_button(label="Machine Learning Doppler-Tolerant Download", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
 
+
+if choice=="Timeline":
+    st.write("test")
 
 st.divider()
 
@@ -171,13 +159,48 @@ st.write(":material/Exclamation: Working on it :material/Exclamation:")
 st.divider()
 # Get latest commit date
 
+# Contact Form
+FORMSUBMIT_URL = "https://formsubmit.co/brandoncaniz4@gmail.com"
+st.title("Contact Me!")
+
+with st.form("contact_form"):
+    name = st.text_input("Name")
+    email = st.text_input("Email Address")
+    message = st.text_area("Message")
+    submit_button = st.form_submit_button("Send")
+
+# Handle submissions
+if submit_button:
+    if name and email and message:
+        # Prepare the data
+        payload = {
+            "name": name,
+            "email": email,
+            "message": message
+        }
+        
+        # Post to FormSubmit
+        response = requests.post(FORMSUBMIT_URL, data=payload)
+        
+        if response.status_code == 200:
+            st.success("Message sent successfully! 🎉")
+        else:
+            st.error("There was an error sending your message.")
+    else:
+        st.warning("Please fill out all fields.")
+
+st.divider()
+
 # Get the latest commit object from the current active branch
 latest_commit = git.Repo().head.commit 
 
-# Access the committed date and convert it to a readable format
+# Access the time of the last commit and convert it to a readable format
 commit_date_timestamp = latest_commit.committed_date
 commit_date = datetime.datetime.fromtimestamp(commit_date_timestamp)
 
+# Convert from UTC to EST
 est_time= commit_date.astimezone(ZoneInfo("America/New_York"))
 
-st.caption(f"Last Updated: {est_time} (EST)")
+# Create a formatted string with the date/time data I want to display
+formatted_str = est_time.strftime("%B %d, %Y %-I:%M:%S %p")
+st.caption(f"Last Updated: {formatted_str} (EST)")
