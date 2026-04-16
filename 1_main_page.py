@@ -5,16 +5,24 @@ from datetime import timezone
 from zoneinfo import ZoneInfo
 
 
-st.title("Brandon Cannizzo")
-st.write(
-    "I will use this page to advertise my skills and experience \n\n :no_pedestrians: Coming Soon :no_pedestrians:"
-)
+col1, col2 = st.columns(2, gap="small")
+with col1:
+    st.image("src/images/LinkedIn_pfp_cropped.jpg", width=300)
 
-st.image('src/images/LinkedIn_pfp_cropped.jpg', width=400, caption="Check out my profiles below!")
+with col2:
+    st.title("Brandon Cannizzo")
+    st.write("IT Service Desk")
+    with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
+        st.download_button(label=":material/Download: Download a PDF of my Resume", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
+    if st.button(":material/mail: Contact Me"):
+        st.switch_page("2_contact_form.py")
 
-ico_width = 80
+
+# --- SOCIAL LINKS ---
+st.write('\n')
+ico_width = 60
 with st.container():
-    col_1, col_2, col_3 = st.columns(3, width = 200)
+    col_1, col_2, col_3 = st.columns(3)
     with col_1:
         st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
     
@@ -26,35 +34,24 @@ with st.container():
         st.image('src/images/tryhackme_logo.jpg', width=ico_width, link="https://tryhackme.com/p/Brandoon")
 
 
-
 # Sidebar with sections links for easy navigation
 with st.sidebar:
     st.title("Sections")
     st.markdown("[About Me](#about-me)")
-    st.markdown("[Resume](#resume)")
     st.markdown("[Experience](#experience)")
     st.markdown("[Education](#education)")
     st.markdown("[Skills](#skills)")
     st.markdown("[Certifications](#certifications)")
-    st.markdown("[Contact Me](#contact-me)")
 
 st.divider()
 st.header(":material/Info: About Me", anchor="about-me")
 
 st.write('''
-        NJIT alumnus with an M.S. in Computer Engineering, searching 
-        for a rewarding opportunity where I can to put my knowledge and 
-        skills to use in an impactful and rewarding way. An experienced Radar, 
-        AI, and machine learning researcher; with a focus in wireless communications 
-        and computer networking. Able to collaborate or complete tasks independently.
+        NJIT graduate with an M.S. in Computer Engineering, currently
+        working in IT at the service desk level but always searching for
+        opportunites to learn and grow. I have experience working with Radar and
+        machine learning research, cellular communication, and computer networking.
         ''')
-
-st.divider()
-st.header(":material/docs: Resume", anchor="resume")
-
-# Resume Download Button
-with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
-    st.download_button(label=":material/Download: Download a PDF of my Resume!", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
 
 st.divider()
 
@@ -158,15 +155,8 @@ st.header(":material/Verified: Certifications", anchor="certifications")
 st.write(":material/Exclamation: Working on it :material/Exclamation:")
 
 st.divider()
+
 # Get latest commit date
-
-# Contact Form
-st.header(":mailbox: Contact Me!", anchor="contact-me")
-
-if st.button("Click Here To Contact Me", type="primary"):
-    st.switch_page("2_contact_form.py")
-
-st.divider()
 
 # Get the latest commit object from the current active branch
 latest_commit = git.Repo().head.commit 
