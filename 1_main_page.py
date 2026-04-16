@@ -13,7 +13,7 @@ with col2:
     st.title("Brandon Cannizzo")
     st.write("IT Service Desk")
     with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
-        st.download_button(label=":material/Download: Download a PDF of my Resume", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
+        st.download_button(label=":material/Download: Download my Resume", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
     if st.button(":material/mail: Contact Me"):
         st.switch_page("2_contact_form.py")
 
