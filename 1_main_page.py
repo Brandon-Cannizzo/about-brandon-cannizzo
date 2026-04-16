@@ -36,6 +36,7 @@ with st.sidebar:
     st.markdown("[Education](#education)")
     st.markdown("[Skills](#skills)")
     st.markdown("[Certifications](#certifications)")
+    st.markdown("[Contact Me](#contact-me)")
 
 st.divider()
 st.header(":material/Info: About Me", anchor="about-me")
@@ -160,7 +161,7 @@ st.divider()
 # Get latest commit date
 
 # Contact Form
-st.header(":mailbox: Contact Me!")
+st.header(":mailbox: Contact Me!", anchor="contact-me")
 
 if st.button("Click Here To Contact Me", type="primary"):
     st.switch_page("2_contact_form.py")

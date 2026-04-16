@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Contact Me!")
 
-
+# Contact Form
 html_form = """
 <form action="https://formsubmit.co/89c50d2258f5ec9fe7830f361aa775ef" method="POST">
      <input type="hidden" name="_captcha" value="false">
@@ -14,3 +14,15 @@ html_form = """
 """
 
 st.markdown(html_form, unsafe_allow_html=True)
+
+
+
+st.space(size="xxlarge")
+# Return button centered in the middle of the page
+col1, col2, col3 = st.columns(3)
+with col2:
+     if st.button("Return To Main Page", type="tertiary", width="stretch"):
+          st.switch_page("1_main_page.py")
+
+
+
