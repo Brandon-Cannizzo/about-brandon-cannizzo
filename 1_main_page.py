@@ -19,20 +19,11 @@ with col2:
 
 
 # --- SOCIAL LINKS ---
-st.write('\n')
 ico_width = 60
-with st.container():
-    col_1, col_2, col_3 = st.columns(3)
-    with col_1:
+with st.container(horizontal="True", horizontal_alignment="distribute"):
         st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
-    
-    with col_2:
-        
         st.image('src/images/github_logo.png', width=ico_width, link="https://github.com/Brandon-Cannizzo")
-        
-    with col_3:
         st.image('src/images/tryhackme_logo.jpg', width=ico_width, link="https://tryhackme.com/p/Brandoon")
-
 
 # Sidebar with sections links for easy navigation
 with st.sidebar:
@@ -58,9 +49,6 @@ st.divider()
 # Work Experience Section
 st.title(":material/Work: Experience", anchor="experience")
 
-# Offer different views for Experience for testing purposes
-choice = st.selectbox("Choose formatting option for realtime comparison", 
-                      ("Expanders", "Columns", "Tabs", "Timeline"))
 
 Harmony_Text = """
 ● Enrolled and removed devices from the environment utilizing Windows Autopilot
@@ -83,62 +71,22 @@ NJIT_Text = """
             """
 
 
-if choice=="Expanders":
-    with st.expander("Harmony Biosciences - IT Service Desk"):
-        st.text(f"November 2025 - Present\n{Harmony_Text}")
-        
-    with st.expander("AuresTech - Engineer"):
-        st.text(f"June 2024 - September 2025\n{Aures_Text}")
-        
-    with st.expander("New Jersey Institute of Technology - Research Assistant"):
-        st.text(f"May 2023 - May 2024\n{NJIT_Text}")
-
-        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
-
-if choice=="Columns":
-    col_3, col_4, col_5 = st.columns(3)
-    with col_3:
-        st.header("Harmony Biosciences - IT Service Desk")
-        st.text(f"November 2025 - Present\n{Harmony_Text}")
-
-    with col_4:
-        st.header("AuresTech - Engineer")
-        st.text(f"June 2024 - September 2025\n{Aures_Text}")
-
-    with col_5:
-        st.header("New Jersey Institute of Technology - Research Assistant")
-        st.text(f"May 2023 - May 2024\n{NJIT_Text}")
-        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-            st.download_button(label="Download a copy of the paper I helped work on", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
-
-
-if choice=="Tabs":
-    tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
-    with tab_1:
-        st.text(f"Title: IT Service Desk\nExperience\n{Harmony_Text}")
-    with tab_2:
-        st.text(f"Title: Engineer\nExperience\n{Aures_Text}")
-    with tab_3:
-        st.text(f"Title: Research Assistant\nExperience\n{NJIT_Text}\nAssisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
-        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-            st.download_button(label="Machine Learning Doppler-Tolerant Download", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf")
-
-
-if choice=="Timeline":
-    st.write("test")
+tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
+with tab_1:
+    st.text(f"IT Service Desk\nNovember 2025 - Present\n{Harmony_Text}")
+with tab_2:
+    st.text(f"Engineer\nJune 2024 - September 2025\n{Aures_Text}")
+with tab_3:
+    st.text(f"Research Assistant\nMay 2023 - May 2024\n{NJIT_Text}\nAssisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
+    with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
+        st.download_button(icon=":material/download:", label="Download Paper", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf", help="Machine Learning Doppler-Tolerant One-Bit Radar Detectors")
 
 st.divider()
 
 st.title(":material/School: Education", anchor="education")
-col_6, col_7 = st.columns(2)
-with col_7:
-    st.image('src/images/NJIT_simple.png', width="content", link="https://www.njit.edu/")
-
-with col_6:
-    st.write("New Jersey Institute of Technology")
-    st.write(''' May 2023 - BS In Computer Engineering \n\n May 2024 - MS In Computer Engineering
-         ''')
+st.subheader("New Jersey Institute of Technology")
+st.write("May 2023 - BS In Computer Engineering")
+st.write("May 2024 - MS In Computer Engineering")
 
 
 st.divider()
