@@ -4,7 +4,7 @@ import git
 from datetime import timezone
 from zoneinfo import ZoneInfo
 
-
+# Page Header
 col1, col2 = st.columns(2, gap="small")
 with col1:
     st.image("src/images/LinkedIn_pfp_cropped.jpg", width=300)
@@ -17,8 +17,7 @@ with col2:
     if st.button(":material/mail: Contact Me"):
         st.switch_page("2_contact_form.py")
 
-
-# --- SOCIAL LINKS ---
+# Social Links
 ico_width = 60
 with st.container(horizontal="True", horizontal_alignment="distribute"):
         st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
@@ -28,27 +27,28 @@ with st.container(horizontal="True", horizontal_alignment="distribute"):
 # Sidebar with sections links for easy navigation
 with st.sidebar:
     st.title("Sections")
-    st.markdown("[About Me](#about-me)")
-    st.markdown("[Experience](#experience)")
-    st.markdown("[Education](#education)")
-    st.markdown("[Skills](#skills)")
-    st.markdown("[Certifications](#certifications)")
+    st.markdown('''
+        [About Me](#about-me)\n\n
+        [Experience](#experience)\n\n
+        [Education](#education)\n\n
+        [Skills](#skills)\n\n
+        [Certifications](#certifications)''')
 
 st.divider()
+# About Me introduction 
 st.header(":material/Info: About Me", anchor="about-me")
 
 st.write('''
         NJIT graduate with an M.S. in Computer Engineering, currently
         working in IT at the service desk level but always searching for
-        opportunites to learn and grow. I have experience working with Radar and
-        machine learning research, cellular communication, and computer networking.
+        opportunites to learn and grow. Past experience working with Radar and
+        machine learning research, cellular communication, computer networking, 
+        and IT help desk services.
         ''')
 
 st.divider()
-
 # Work Experience Section
 st.title(":material/Work: Experience", anchor="experience")
-
 
 Harmony_Text = """
 ● Enrolled and removed devices from the environment utilizing Windows Autopilot
@@ -70,37 +70,43 @@ NJIT_Text = """
 ● Generate figures and supply comments for monthly reports
             """
 
-
+# Create tabbed view of work experience
 tab_1, tab_2, tab_3 = st.tabs(["Harmony Biosciences", "AuresTech", "New Jersey Institute of Technology"])
 with tab_1:
     st.text(f"IT Service Desk\nNovember 2025 - Present\n{Harmony_Text}")
 with tab_2:
     st.text(f"Engineer\nJune 2024 - September 2025\n{Aures_Text}")
 with tab_3:
-    st.text(f"Research Assistant\nMay 2023 - May 2024\n{NJIT_Text}\nAssisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a PDF of said paper below.")
-    with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
-        st.download_button(icon=":material/download:", label="Download Paper", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf", help="Machine Learning Doppler-Tolerant One-Bit Radar Detectors")
+    st.text(f"Research Assistant\nMay 2023 - May 2024\n{NJIT_Text}\nAssisted PHD student with Radar and Machine Learning research, which led to a published paper. You can download a copy or view it online below.")
+    with st.container(horizontal="True"):
+        with open("src/files/Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", "rb") as file:
+            st.download_button(icon=":material/download:", label="Download Paper", file_name="Machine Learning Doppler-Tolerant One-Bit Radar Detectors.pdf", data=file, mime="application/pdf", help="Machine Learning Doppler-Tolerant One-Bit Radar Detectors")
+        st.link_button(help="IET Online Library",icon=":material/book:", label="Read Online", url="https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/rsn2.70011?af=R")
 
 st.divider()
-
+# Education history
 st.title(":material/School: Education", anchor="education")
-st.subheader("New Jersey Institute of Technology")
-st.write("May 2023 - BS In Computer Engineering")
-st.write("May 2024 - MS In Computer Engineering")
+st.header("New Jersey Institute of Technology")
+with st.container(horizontal="True", vertical_alignment="distribute"):
+    st.subheader("May 2023")
+    st.subheader("May 2024")
 
+with st.container(horizontal="True", vertical_alignment="distribute"):
+    st.write("BS In Computer Engineering")
+    st.space(141)
+    st.write("MS In Computer Engineering")
 
 st.divider()
+# Skills list
 st.header(":material/Build_Circle: Skills", anchor="skills")
-
-# Can break this up like Programming Languages, Hardware, IT/Security
-st.write("Python, C++, MATLAB, Java")
-st.write("Help Desk iPad/PC Repair, Radio Equipment, Spectrum Analysis")
-st.write("Active Directory, Intune, Sophos, On-Site & Remote Assistance")
+st.write("**Programming:** Python, C++, MATLAB, Java")
+st.write("**IT Related Software:** Active Directory, Intune, Sophos")
+st.write("**Hands on:** On-Site & Remote IT Assistance, Radio Equipment, Spectrum Analysis")
 
 st.divider()
-
+# Certifications list
 st.header(":material/Verified: Certifications", anchor="certifications")
-st.write(":material/Exclamation: Working on it :material/Exclamation:")
+st.write("Currently In Progress")
 
 st.divider()
 

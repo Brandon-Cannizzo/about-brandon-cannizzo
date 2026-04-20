@@ -12,10 +12,7 @@ html_form = """
      <button type="submit" style="background-color: #ff4b4b; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Send</button>
 </form>
 """
-
 st.markdown(html_form, unsafe_allow_html=True)
-
-
 
 st.space(size="xxlarge")
 # Return button centered in the middle of the page
