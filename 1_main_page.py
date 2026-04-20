@@ -10,8 +10,8 @@ with col1:
     st.image("src/images/LinkedIn_pfp_cropped.jpg", width=300)
 
 with col2:
-    st.title("Brandon Cannizzo")
-    st.write("IT Service Desk")
+    st.title("Brandon Cannizzo", anchor=False)
+    st.subheader("IT Service Desk", anchor=False)
     with open("src/files/Brandon Cannizzo Resume 2026.pdf", "rb") as file:
         st.download_button(label=":material/Download: Download my Resume", file_name="Brandon Cannizzo Resume 2026.pdf", data=file, mime="application/pdf")
     if st.button(":material/mail: Contact Me"):
@@ -86,15 +86,15 @@ with tab_3:
 st.divider()
 # Education history
 st.title(":material/School: Education", anchor="education")
-st.header("New Jersey Institute of Technology")
-with st.container(horizontal="True", vertical_alignment="distribute"):
-    st.subheader("May 2023")
-    st.subheader("May 2024")
-
-with st.container(horizontal="True", vertical_alignment="distribute"):
+st.header("New Jersey Institute of Technology", anchor=False)
+col_1, col_2 = st.columns(2)
+with col_1:
+    st.subheader("May 2023", anchor=False)
     st.write("BS In Computer Engineering")
-    st.space(141)
+with col_2:
+    st.subheader("May 2024", anchor=False)
     st.write("MS In Computer Engineering")
+
 
 st.divider()
 # Skills list
