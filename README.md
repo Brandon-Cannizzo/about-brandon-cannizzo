@@ -1,5 +1,7 @@
 # About Me (Brandon Cannizzo)
 
-This app will act as a sort of portfolio with my resume, skills, experience, and certificates(soon to come)
+This app was created as a first test of my skills and knowledge in both Python and Streamlit
 
-*Currently this is in progress and not complete*
+It is now completed and is an accurate reflection of my current experience
+
+I will continue to update this as my life, skills, experiences, and accomplishments change
