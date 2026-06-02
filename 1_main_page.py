@@ -23,6 +23,7 @@ with st.container(horizontal="True", horizontal_alignment="distribute"):
         st.image('src/images/LinkedIn_logo.png', width=ico_width, link="https://www.linkedin.com/in/brandoncannizzo/")
         st.image('src/images/github_logo.png', width=ico_width, link="https://github.com/Brandon-Cannizzo")
         st.image('src/images/tryhackme_logo.jpg', width=ico_width, link="https://tryhackme.com/p/Brandoon")
+        st.image('src/images/microsoft.png', width=ico_width+80,link="https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/")
 
 # Sidebar with sections links for easy navigation
 with st.sidebar:
