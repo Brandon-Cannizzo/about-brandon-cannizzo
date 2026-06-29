@@ -109,25 +109,8 @@ st.divider()
 # Certifications list
 st.header(":material/Verified: Certifications", anchor="certifications")
 
-df = pd.DataFrame(
-    {
-        "name": ["Microsoft Applied Skills: Generate reports with AI research agents",
-                  "Microsoft Applied Skills: Streamline business workflows with AI chat"],
-        "url": [
-            "https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F",
-            "https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/4ce9586431e064e5?ref=https%3A%2F%2Fwww.linkedin.com%2F",
-        ],
-    }
-)
-
-st.dataframe(
-    df,
-    column_config={
-        "name": "Certification/Skill",
-        "url": st.column_config.LinkColumn("Credential URL"),
-    },
-    hide_index=True,
-)
+st.markdown("[Microsoft Applied Skills: Generate reports with AI research agents](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
+st.markdown("[Microsoft Applied Skills: Streamline business workflows with AI chat](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/4ce9586431e064e5?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
 
 st.divider()
 
