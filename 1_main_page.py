@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 import git
+import pandas as pd
 from datetime import timezone
 from zoneinfo import ZoneInfo
 
@@ -107,7 +108,26 @@ st.write("**Hands on:** On-Site & Remote IT Assistance, Radio Equipment, Spectru
 st.divider()
 # Certifications list
 st.header(":material/Verified: Certifications", anchor="certifications")
-st.write("Currently In Progress")
+
+df = pd.DataFrame(
+    {
+        "name": ["Microsoft Applied Skills: Generate reports with AI research agents",
+                  "Microsoft Applied Skills: Streamline business workflows with AI chat"],
+        "url": [
+            "https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+            "https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/4ce9586431e064e5?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+        ],
+    }
+)
+
+st.dataframe(
+    df,
+    column_config={
+        "name": "Certification/Skill",
+        "url": st.column_config.LinkColumn("Credential URL"),
+    },
+    hide_index=True,
+)
 
 st.divider()
 
