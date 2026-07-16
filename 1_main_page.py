@@ -109,8 +109,22 @@ st.divider()
 # Certifications list
 st.header(":material/Verified: Certifications", anchor="certifications")
 
-st.markdown("[Microsoft Applied Skills: Generate reports with AI research agents](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
-st.markdown("[Microsoft Applied Skills: Streamline business workflows with AI chat](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/4ce9586431e064e5?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
+col1, col2 = st.columns(2,border=True, gap="large", width=800)
+
+with col1:
+    st.write("**Microsoft Applied Skills: Generate reports with AI research agents**")
+    st.write("_Microsoft_")
+    st.write("Earned: June 2026")
+    st.badge("Active", icon=":material/verified:", color="green")
+    st.markdown("[View Credential](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
+
+with col2:
+    st.write("**Microsoft Applied Skills: Streamline business workflows with AI chat**")
+    st.write("_Microsoft_")
+    st.write("Earned: June 2026")
+    st.badge("Active", icon=":material/verified:", color="green")
+    st.markdown("[View Credential](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/4ce9586431e064e5?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
+
 
 st.divider()
 
