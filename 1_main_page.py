@@ -6,7 +6,7 @@ from datetime import timezone
 from zoneinfo import ZoneInfo
 
 # Page Header
-col1, col2 = st.columns(2, gap="small")
+col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 with col1:
     st.image("src/images/LinkedIn_pfp_cropped.jpg", width=300)
 
@@ -34,7 +34,7 @@ with st.sidebar:
         [Experience](#experience)\n\n
         [Education](#education)\n\n
         [Skills](#skills)\n\n
-        [Certifications](#certifications)''')
+        [Credentials](#credentials)''')
 
 st.divider()
 # About Me introduction 
@@ -106,8 +106,8 @@ st.write("**IT Related Software:** Active Directory, Intune, Sophos")
 st.write("**Hands on:** On-Site & Remote IT Assistance, Radio Equipment, Spectrum Analysis")
 
 st.divider()
-# Certifications list
-st.header(":material/Verified: Certifications", anchor="certifications")
+# Credentials list
+st.header(":material/Verified: Credentials", anchor="credentials")
 
 col1, col2 = st.columns(2,border=True, gap="large", width=800)
 
