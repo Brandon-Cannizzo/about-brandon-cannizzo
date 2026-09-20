@@ -109,7 +109,7 @@ st.divider()
 # Credentials list
 st.header(":material/Verified: Credentials", anchor="credentials")
 
-col1, col2, col3 = st.columns(2,border=True, gap="large", width=800)
+col1, col2, col3 = st.columns(3,border=True, gap="large", width=800)
 
 with col1:
     st.write("**Microsoft Certified: Azure Fundamentals**")
