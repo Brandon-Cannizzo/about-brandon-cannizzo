@@ -109,16 +109,23 @@ st.divider()
 # Credentials list
 st.header(":material/Verified: Credentials", anchor="credentials")
 
-col1, col2 = st.columns(2,border=True, gap="large", width=800)
+col1, col2, col3 = st.columns(2,border=True, gap="large", width=800)
 
 with col1:
+    st.write("**Microsoft Certified: Azure Fundamentals**")
+    st.write("_Microsoft_")
+    st.write("Earned: September 2026")
+    st.badge("Active", icon=":material/verified:", color="green")
+    st.markdown("[View Credential](https://learn.microsoft.com/api/credentials/share/en-us/BrandonCannizzo-4515/A4E338B85719C466?sharingId=CAC6E42315C71296)")
+
+with col2:
     st.write("**Microsoft Applied Skills: Generate reports with AI research agents**")
     st.write("_Microsoft_")
     st.write("Earned: June 2026")
     st.badge("Active", icon=":material/verified:", color="green")
     st.markdown("[View Credential](https://learn.microsoft.com/en-us/users/brandoncannizzo-4515/credentials/c9272c413e1b992e?ref=https%3A%2F%2Fwww.linkedin.com%2F)")
 
-with col2:
+with col3:
     st.write("**Microsoft Applied Skills: Streamline business workflows with AI chat**")
     st.write("_Microsoft_")
     st.write("Earned: June 2026")
